@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANISH ATELIER — Exhibition Store</title>
+  <meta name="description" content="ANISH ATELIER custom and ready-to-order T-shirts.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home">
+    <div class="logo-mark">Λ</div>
+    <div><strong>ANISH</strong><span>ATELIER</span></div>
+  </a>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#custom">Customize</a>
+    <a href="#payment">Payment</a>
+  </nav>
+  <a class="cart-btn" href="#cart">Cart <b id="cartCount">0</b></a>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div>
+    <p class="eyebrow">EXHIBITION 2026</p>
+    <h1>Wear your idea.<br><em>Make it yours.</em></h1>
+    <p class="hero-copy">Ready-made anime-inspired designs and custom printed T-shirts in one place.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#products">Shop products</a>
+      <a class="btn ghost" href="#custom">Create custom T-shirt</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="tee-preview black"><span>ANISH<br><small>ATELIER</small></span></div>
+    <div class="lightning">✦</div>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="section-head">
+    <div><p class="eyebrow">READY TO ORDER</p><h2>Our Products</h2></div>
+    <p>Choose size, colour and quantity, then add to cart.</p>
+  </div>
+  <div class="product-grid">
+    <article class="product-card">
+      <div class="product-art black-art">
+        <div class="tee-shape"><div class="design">⚡<br><b>ZENITSU</b><br><small>LIGHTNING</small></div></div>
+      </div>
+      <div class="product-info">
+        <span class="tag">READY PRINT</span>
+        <h3>Zenitsu Lightning — Black</h3>
+        <p class="price">₹699</p>
+        <label>Size
+          <select class="p-size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+        </label>
+        <label>Colour
+          <select class="p-color"><option>Black</option></select>
+        </label>
+        <label>Quantity <input class="p-qty" type="number" min="1" value="1"></label>
+        <button class="btn primary add-product" data-name="Zenitsu Lightning — Black" data-price="699">Add to cart</button>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-art white-art">
+        <div class="tee-shape"><div class="design dark">⚡<br><b>ZENITSU</b><br><small>LIGHTNING</small></div></div>
+      </div>
+      <div class="product-info">
+        <span class="tag">READY PRINT</span>
+        <h3>Zenitsu Lightning — White</h3>
+        <p class="price">₹699</p>
+        <label>Size
+          <select class="p-size"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+        </label>
+        <label>Colour
+          <select class="p-color"><option>White</option></select>
+        </label>
+        <label>Quantity <input class="p-qty" type="number" min="1" value="1"></label>
+        <button class="btn primary add-product" data-name="Zenitsu Lightning — White" data-price="699">Add to cart</button>
+      </div>
+    </article>
+  </div>
+  <p class="small-note">These are the ready-made products currently listed for the exhibition. More products can be added later from the product list inside <code>script.js</code>.</p>
+</section>
+
+<section id="custom" class="section alt">
+  <div class="section-head">
+    <div><p class="eyebrow">YOUR DESIGN</p><h2>Custom Printing</h2></div>
+    <p>Upload your image and choose the T-shirt and print size.</p>
+  </div>
+  <div class="custom-layout">
+    <div class="upload-box">
+      <div class="upload-icon">＋</div>
+      <h3>Upload your design</h3>
+      <p>PNG / JPG / JPEG</p>
+      <input id="designUpload" type="file" accept="image/png,image/jpeg,image/jpg">
+      <div id="previewWrap" class="preview-wrap hidden"><img id="designPreview" alt="Design preview"></div>
+    </div>
+    <form id="customForm" class="form-card">
+      <label>Your name<input id="cName" required placeholder="Full name"></label>
+      <div class="two">
+        <label>Phone / WhatsApp<input id="cPhone" required inputmode="numeric" placeholder="10-digit number"></label>
+        <label>Quantity<input id="cQty" type="number" min="1" value="1" required></label>
+      </div>
+      <div class="two">
+        <label>T-shirt size<select id="cSize"><option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select></label>
+        <label>T-shirt colour<select id="cColor"><option>Black</option><option>White</option><option>Grey</option><option>Navy</option></select></label>
+      </div>
+      <label>Print size
+        <select id="printSize">
+          <option value="A5">A5 — ₹749</option>
+          <option value="A4">A4 — ₹799</option>
+          <option value="Large">Large — ₹849</option>
+        </select>
+      </label>
+      <label>Delivery address<textarea id="cAddress" required placeholder="Full address"></textarea></label>
+      <p class="custom-price">Custom printing: <b id="customPrice">₹749</b> per T-shirt</p>
+      <button class="btn primary wide" type="submit">Add custom order</button>
+    </form>
+  </div>
+</section>
+
+<section id="cart" class="section">
+  <div class="section-head"><div><p class="eyebrow">YOUR ORDER</p><h2>Cart & Checkout</h2></div></div>
+  <div class="checkout-layout">
+    <div class="cart-card">
+      <div id="cartItems"><p class="empty">Your cart is empty. Add a product or custom order first.</p></div>
+      <div class="total-row"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+    </div>
+    <form id="checkoutForm" class="form-card">
+      <h3>Customer details</h3>
+      <label>Full name<input id="oName" required></label>
+      <label>WhatsApp / phone<input id="oPhone" required inputmode="numeric" placeholder="10-digit number"></label>
+      <label>Delivery address<textarea id="oAddress" required></textarea></label>
+      <button class="btn primary wide" type="submit">Place Order</button>
+      <p class="tiny">Placing the order prepares a WhatsApp message for ANISH ATELIER with the complete order, phone number and delivery address.</p>
+    </form>
+  </div>
+</section>
+
+<section id="payment" class="section alt payment-section">
+  <div>
+    <p class="eyebrow">PAYMENT</p>
+    <h2>Scan & Pay</h2>
+    <p>Use the QR below or the UPI ID. After payment, send the order confirmation on WhatsApp.</p>
+    <div class="upi"><span>UPI ID</span><b>8237715700@fam</b><button id="copyUpi">Copy</button></div>
+    <a id="upiPay" class="btn primary" href="upi://pay?pa=8237715700%40fam&pn=ANISH%20ATELIER">Pay with UPI app</a>
+  </div>
+  <div class="qr-card"><img src="assets/payment-qr.jpg" alt="ANISH ATELIER payment QR"><p>UPI: 8237715700@fam</p></div>
+</section>
+
+<section class="section contact">
+  <p class="eyebrow">NEED HELP?</p>
+  <h2>Talk to ANISH ATELIER</h2>
+  <p>WhatsApp: <b>8237715700</b></p>
+  <a class="btn ghost" href="https://wa.me/918237715700?text=Hello%20ANISH%20ATELIER%2C%20I%20have%20a%20question%20about%20an%20order." target="_blank">Open WhatsApp</a>
+</section>
+</main>
+
+<div id="confirmModal" class="modal hidden">
+  <div class="modal-box">
+    <button class="close" id="closeModal">×</button>
+    <div class="success">✓</div>
+    <p class="eyebrow">ORDER READY</p>
+    <h2>Order confirmation</h2>
+    <p id="orderId"></p>
+    <div id="confirmSummary" class="summary"></div>
+    <div class="modal-actions">
+      <a id="whatsappBtn" class="btn primary wide" target="_blank">Send order on WhatsApp</a>
+      <a class="btn ghost wide" href="#payment" id="payBtn">View payment QR</a>
+    </div>
+    <p class="tiny">The WhatsApp button opens your message app with the order details already filled in. The customer can send it to ANISH ATELIER for confirmation.</p>
+  </div>
+</div>
+
+<footer>© 2026 ANISH ATELIER · Exhibition Store</footer>
+<script src="script.js"></script>
+</body>
+</html>
